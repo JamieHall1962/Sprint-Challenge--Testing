@@ -25,7 +25,7 @@ describe('server.js', ()=>{
         });
 
     })
-    describe('he GET /games endpoint should return the list of games and HTTP status code 200',()=>{
+    describe('The GET /games endpoint should return the list of games and HTTP status code 200',()=>{
         it('make sure this endpoint always returns an array, even if there are no games stored. If there are no games to return, the endpoint should return an empty array',async ()=>{
             const result = await request(server).get ('/api/games');
             expect (Array.isArray(result.body)).toBeTruthy()
