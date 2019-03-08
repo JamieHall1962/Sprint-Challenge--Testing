@@ -35,11 +35,11 @@ describe('server.js', ()=>{
             expect(result.status).toBe(200)
         })
         it('should return the list of games',async()=>{
-            const result = await request(server).post('/api/games')
+             await request(server).post('/api/games')
             .send({ title: 'Pinochle', genre: 'Card Game', releaseYear: 1852 })
-            const result = await request(server).get('/api/games')
-            const expected = [{ id: 4, title: 'Pinochle', genre: 'Card Game', releaseYear: 1852 }]
-            expect(result.body).toEqual(expected)
+            const resultGet = await request(server).get('/api/games')
+            const expected = [{ id: 1, title: 'Pinochle', genre: 'Card Game', releaseYear: 1852 }]
+            expect(resultGet.body).toEqual(expected)
         })
     })
 })
